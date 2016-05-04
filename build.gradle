@@ -1,0 +1,27 @@
+apply plugin: 'java'
+
+repositories {
+   mavenCentral()
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+dependencies {
+    compile group: 'org.boofcv', name: 'all', version: '0.23'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+jar {
+	manifest { 
+		attributes 'Main-Class': 'motion.Motion'
+	}  
+	
+	archiveName = 'motion.jar'
+}
